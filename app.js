@@ -82,7 +82,7 @@
     return `<table class="table table-sm table-striped align-middle">${thead}${tbody}</table>`
   }
 
-  const kpiBox = (label, value) =>
+  const Box = (label, value) =>
     `<div class="col">
        <div class="border rounded p-3 text-center bg-light">
          <div class="text-muted small">${label}</div>
@@ -106,9 +106,9 @@
 
     const kpis =
       `<div class="row g-2">
-         ${kpiBox('Total countries in result', fmt(totalCountries))}
-         ${kpiBox('Total population', fmt(totalPopulation))}
-         ${kpiBox('Average population', fmt(avgPopulation))}
+         ${Box('Total countries in result', fmt(totalCountries))}
+         ${Box('Total population', fmt(totalPopulation))}
+         ${Box('Average population', fmt(avgPopulation))}
        </div>`
 
     const countriesRows = byCountry.map(({ name, pop }) => [name, `<span class="mono">${fmt(pop)}</span>`])
