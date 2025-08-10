@@ -2,30 +2,33 @@
 <html lang="en">
 
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Countries Stats</title>
-        <script src="app.js"></script>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
+        <script defer src="app.js"></script>
     </head>
 
     <body>
         <header>
-            <div class="header">
+            <div class="wrap">
                 <h1>Countries statistics</h1>
-                <p>Search by name ot load all.</p>
+                <p class="lead">Search by name or load all countries.</p>
             </div>
         </header>
 
-        <main>
-            <form>
-                <input type="text" placeholder="enter a country">
+        <main class="wrap">
+            <form class="toolbar" id="searchForm">
+                <input id="q" name="q" type="text" placeholder="Type a country name" autocomplete="off">
                 <button type="submit">Search</button>
                 <button type="button">Load all</button>
             </form>
+
+            <div id="status" class="status hidden"></div>
+
+            <section id="output" class="grid" aria-live="polite" aria-busy="false"></section>
         </main>
 
-        <section id="output"></section>
         <footer class="site-footer">
             <div class="wrap">
                 <p>powered by gold!!!</p>
